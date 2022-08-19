@@ -9,6 +9,7 @@ import {
 import type { NextComponentType } from "next";
 import Image from "next/image";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import { useContext } from "react";
 
 const ButtonIcon = styled(Button)`
   display: "inline-block";
@@ -32,7 +33,6 @@ const Header: NextComponentType = () => {
           sx={{
             width: "100%",
             maxWidth: 1024,
-
             justifyContent: "space-between",
           }}
         >
@@ -46,8 +46,8 @@ const Header: NextComponentType = () => {
           </Stack>
 
           <Stack>
-            <ButtonIcon color="dark">
-              <LightModeOutlinedIcon sx={{ margin: 1, color: "#ffffff" }} />
+            <ButtonIcon color="dark" onClick={() => {}}>
+              <LightModeOutlinedIcon sx={{ margin: 1 }} color="light" />
             </ButtonIcon>
           </Stack>
         </Toolbar>

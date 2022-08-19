@@ -33,3 +33,10 @@ declare module "@mui/material/AppBar" {
     light: true;
   }
 }
+
+declare module "@mui/material/SvgIcon" {
+  interface SvgIconPropsColorOverrides {
+    dark: true;
+    light: true;
+  }
+}
