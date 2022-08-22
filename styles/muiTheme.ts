@@ -4,20 +4,20 @@ const getMuiTheme = (mode: PaletteMode) =>
   createTheme({
     palette: {
       mode,
-      ...(mode === "light"
+      ...(mode === "dark"
         ? {
-            primary: {
-              main: "#999999",
-            },
-            dark: { main: "#000000" },
-            light: { main: "#ffffff" },
-          }
-        : {
             primary: {
               main: "#999999",
             },
             dark: { main: "#ffffff" },
             light: { main: "#000000" },
+          }
+        : {
+            primary: {
+              main: "#999999",
+            },
+            dark: { main: "#000000" },
+            light: { main: "#ffffff" },
           }),
     },
     typography: {

@@ -10,6 +10,7 @@ import type { NextComponentType } from "next";
 import Image from "next/image";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import { useContext } from "react";
+import { GlobalContext } from "../pages/_app";
 
 const ButtonIcon = styled(Button)`
   display: "inline-block";
@@ -19,6 +20,8 @@ const ButtonIcon = styled(Button)`
 `;
 
 const Header: NextComponentType = () => {
+  const { mode, setMode } = useContext(GlobalContext);
+
   return (
     <Stack>
       <AppBar
@@ -38,7 +41,11 @@ const Header: NextComponentType = () => {
         >
           <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
             <div style={{ width: 40, height: 40, position: "relative" }}>
-              <Image src="/icon_w.png" layout="fill" objectFit="contain" />
+              <Image
+                src={mode === "dark" ? "/icon_b.png" : "/icon_w.png"}
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
             <Typography variant="body1" sx={{ fontWeight: "bold" }}>
               HELLO, WOONY
@@ -46,7 +53,12 @@ const Header: NextComponentType = () => {
           </Stack>
 
           <Stack>
-            <ButtonIcon color="dark" onClick={() => {}}>
+            <ButtonIcon
+              color="dark"
+              onClick={() => {
+                setMode?.((prev) => (prev === "dark" ? "light" : "dark"));
+              }}
+            >
               <LightModeOutlinedIcon sx={{ margin: 1 }} color="light" />
             </ButtonIcon>
           </Stack>
