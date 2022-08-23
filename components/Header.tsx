@@ -48,7 +48,7 @@ const Header: NextComponentType = () => {
                 objectFit="contain"
               />
             </div>
-            <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            <Typography variant="body1" fontWeight="bold" fontSize={20}>
               HELLO, WOONY
             </Typography>
           </Stack>

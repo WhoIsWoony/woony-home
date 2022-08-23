@@ -41,7 +41,7 @@ function App({ Component, pageProps }: AppProps) {
         <CssBaseline />
         <style global jsx>{`
           body {
-            background: ${selectedTheme === "dark" ? "#000000" : "#ffffff"};
+            background: ${selectedTheme === "dark" ? "#000000" : "#fff6dd"};
           }
         `}</style>
         <Component {...pageProps} />

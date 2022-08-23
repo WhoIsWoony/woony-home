@@ -6,7 +6,7 @@ export const lightTheme = createTheme({
       main: "#999999",
     },
     dark: { main: "#000000" },
-    light: { main: "#ffffff" },
+    light: { main: "#fff6dd" },
   },
   typography: {
     button: {},
@@ -30,7 +30,7 @@ export const darkTheme = createTheme({
     primary: {
       main: "#999999",
     },
-    dark: { main: "#ffffff" },
+    dark: { main: "#fff6dd" },
     light: { main: "#000000" },
   },
   typography: {
