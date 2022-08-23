@@ -1,14 +1,5 @@
 import "styled-components";
 
-declare module "styled-components" {
-  export interface DefaultTheme {
-    colors: {
-      black: string;
-      white: string;
-    };
-  }
-}
-
 declare module "@mui/material/styles" {
   interface Palette {
     dark: Palette["primary"];

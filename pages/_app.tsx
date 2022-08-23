@@ -1,9 +1,7 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
 import { PaletteMode, ThemeProvider as MuiThemeProvider } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 
-import { GlobalStyle } from "../styles/globalStyle";
-import { theme } from "../styles/theme";
 import {
   createContext,
   Dispatch,
@@ -11,41 +9,43 @@ import {
   useEffect,
   useState,
 } from "react";
-import getMuiTheme from "../styles/muiTheme";
+import { darkTheme, lightTheme } from "../styles/muiThemes";
 import LocalStorage from "../util/LocalStorage";
 
 interface IGlobalContext {
-  mode?: PaletteMode;
-  setMode?: Dispatch<SetStateAction<PaletteMode>>;
+  selectedTheme?: PaletteMode;
+  setSelectedTheme?: Dispatch<SetStateAction<PaletteMode>>;
 }
-export const GlobalContext = createContext<IGlobalContext>({ mode: "dark" });
+export const GlobalContext = createContext<IGlobalContext>({});
 
 export const ColorModeContext = createContext({
   toggle: () => {},
 });
 
 function App({ Component, pageProps }: AppProps) {
-  const [mode, setMode] = useState<PaletteMode>(
-    LocalStorage.getItem("mode") === "dark" ? "dark" : "light"
+  const [theme, setTheme] = useState(darkTheme);
+  const [selectedTheme, setSelectedTheme] = useState<PaletteMode>(
+    LocalStorage.getItem("selectedTheme") === "dark" ? "dark" : "light"
   );
+
   useEffect(() => {
-    const toggleMode = () => {
-      LocalStorage.setItem(
-        "mode",
-        LocalStorage.getItem("mode") === "dark" ? "dark" : "light"
-      );
-    };
-    toggleMode();
-  }, [mode]);
+    if (!LocalStorage.getItem("selectedTheme"))
+      LocalStorage.setItem("selectedTheme", "dark");
+    setTheme(selectedTheme === "dark" ? darkTheme : lightTheme);
+    LocalStorage.setItem("selectedTheme", selectedTheme);
+  }, [selectedTheme]);
 
   return (
-    <GlobalContext.Provider value={{ mode, setMode }}>
-      <ThemeProvider theme={theme}>
-        <MuiThemeProvider theme={getMuiTheme(mode)}>
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </MuiThemeProvider>
-      </ThemeProvider>
+    <GlobalContext.Provider value={{ selectedTheme, setSelectedTheme }}>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <style global jsx>{`
+          body {
+            background: ${selectedTheme === "dark" ? "#000000" : "#ffffff"};
+          }
+        `}</style>
+        <Component {...pageProps} />
+      </MuiThemeProvider>
     </GlobalContext.Provider>
   );
 }

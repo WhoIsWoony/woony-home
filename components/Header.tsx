@@ -20,7 +20,7 @@ const ButtonIcon = styled(Button)`
 `;
 
 const Header: NextComponentType = () => {
-  const { mode, setMode } = useContext(GlobalContext);
+  const { selectedTheme, setSelectedTheme } = useContext(GlobalContext);
 
   return (
     <Stack>
@@ -42,7 +42,8 @@ const Header: NextComponentType = () => {
           <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
             <div style={{ width: 40, height: 40, position: "relative" }}>
               <Image
-                src={mode === "dark" ? "/icon_b.png" : "/icon_w.png"}
+                src={selectedTheme === "dark" ? "/icon_b.png" : "/icon_w.png"}
+                alt="Picture of Logo"
                 layout="fill"
                 objectFit="contain"
               />
@@ -56,7 +57,9 @@ const Header: NextComponentType = () => {
             <ButtonIcon
               color="dark"
               onClick={() => {
-                setMode?.((prev) => (prev === "dark" ? "light" : "dark"));
+                setSelectedTheme?.((prev) =>
+                  prev === "dark" ? "light" : "dark"
+                );
               }}
             >
               <LightModeOutlinedIcon sx={{ margin: 1 }} color="light" />
