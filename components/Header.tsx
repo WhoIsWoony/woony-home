@@ -25,7 +25,6 @@ const Header: NextComponentType = () => {
   return (
     <Stack>
       <AppBar
-        color="light"
         sx={{
           boxShadow: 0,
           alignItems: "center",
@@ -35,7 +34,7 @@ const Header: NextComponentType = () => {
         <Toolbar
           sx={{
             width: "100%",
-            maxWidth: 1024,
+            maxWidth: 736,
             justifyContent: "space-between",
           }}
         >

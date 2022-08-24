@@ -1,7 +1,6 @@
 import type { AppProps } from "next/app";
 import { PaletteMode, ThemeProvider as MuiThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-
 import {
   createContext,
   Dispatch,
@@ -36,8 +35,8 @@ function App({ Component, pageProps }: AppProps) {
   }, [selectedTheme]);
 
   return (
-    <GlobalContext.Provider value={{ selectedTheme, setSelectedTheme }}>
-      <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
+      <GlobalContext.Provider value={{ selectedTheme, setSelectedTheme }}>
         <CssBaseline />
         <style global jsx>{`
           body {
@@ -45,8 +44,8 @@ function App({ Component, pageProps }: AppProps) {
           }
         `}</style>
         <Component {...pageProps} />
-      </MuiThemeProvider>
-    </GlobalContext.Provider>
+      </GlobalContext.Provider>
+    </MuiThemeProvider>
   );
 }
 
