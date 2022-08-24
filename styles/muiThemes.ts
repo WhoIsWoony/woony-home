@@ -8,13 +8,18 @@ export const lightTheme = createTheme({
       dark: "#ffffff",
     },
     dark: { main: "#000000" },
-    light: { main: "#fff6dd" },
-    appBarColor: { main: "#fff6ccee" },
+    light: { main: "#F1E6DC" },
+    appBarColor: { main: "#F4EDE5ee" },
   },
   typography: {
     button: {},
   },
   components: {
+    MuiUseMediaQuery: {
+      defaultProps: {
+        noSsr: true,
+      },
+    },
     MuiAppBar: {
       defaultProps: {
         color: "appBarColor",
@@ -40,7 +45,7 @@ export const darkTheme = createTheme({
       light: "#ffffff",
       dark: "#222222",
     },
-    dark: { main: "#fff6dd" },
+    dark: { main: "#F1E6DC" },
     light: { main: "#000000" },
     appBarColor: { main: "#000000" },
   },
@@ -48,6 +53,11 @@ export const darkTheme = createTheme({
     button: {},
   },
   components: {
+    MuiUseMediaQuery: {
+      defaultProps: {
+        noSsr: true,
+      },
+    },
     MuiAppBar: {
       defaultProps: {
         color: "appBarColor",

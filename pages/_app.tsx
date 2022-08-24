@@ -10,6 +10,8 @@ import {
 } from "react";
 import { darkTheme, lightTheme } from "../styles/muiThemes";
 import LocalStorage from "../util/LocalStorage";
+import AppLayout from "./AppLayout";
+import Footer from "../components/Footer";
 
 interface IGlobalContext {
   selectedTheme?: PaletteMode;
@@ -40,10 +42,12 @@ function App({ Component, pageProps }: AppProps) {
         <CssBaseline />
         <style global jsx>{`
           body {
-            background: ${selectedTheme === "dark" ? "#000000" : "#fff6dd"};
+            background: ${selectedTheme === "dark" ? "#000000" : "#F1E6DC"};
           }
         `}</style>
-        <Component {...pageProps} />
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
       </GlobalContext.Provider>
     </MuiThemeProvider>
   );
