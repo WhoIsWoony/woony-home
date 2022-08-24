@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 interface Props {
   children: ReactNode;
 }
-const TIMEOUT = 100;
+const TIMEOUT = 300;
 const getTransitionStyles = {
   entering: {
     position: `absolute`,
