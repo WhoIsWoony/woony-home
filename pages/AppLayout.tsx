@@ -29,19 +29,19 @@ const getTransitionStyles: any = {
   },
 };
 
+const bubbleTexts: any = {
+  "/": { bubbleLeft: "Hello", bubbleRight: "I'm Woony" },
+  "/work": {
+    bubbleLeft: "Here's my work",
+    bubbleRight: "I'm trying my best",
+  },
+  "/posts": { bubbleLeft: "What do you like?", bubbleRight: "I love coding" },
+};
+
 const AppLayout = ({ children }: Props) => {
   const { selectedTheme, setSelectedTheme } = useContext(GlobalContext);
   const { pathname } = useRouter();
   const isPc = useMediaQuery("(min-width:600px)");
-
-  const bubbleTexts: any = {
-    "/": { bubbleLeft: "Hello", bubbleRight: "I'm Woony" },
-    "/work": {
-      bubbleLeft: "Here's my work",
-      bubbleRight: "I'm trying my best",
-    },
-    "/posts": { bubbleLeft: "What do you like?", bubbleRight: "I love coding" },
-  };
 
   return (
     <Stack
