@@ -12,7 +12,7 @@ interface Props {
   children: ReactNode;
 }
 const TIMEOUT = 300;
-const getTransitionStyles = {
+const getTransitionStyles: any = {
   entering: {
     position: `absolute`,
     opacity: 0,
@@ -34,7 +34,7 @@ const AppLayout = ({ children }: Props) => {
   const { pathname } = useRouter();
   const isPc = useMediaQuery("(min-width:600px)");
 
-  const bubbleTexts = {
+  const bubbleTexts: any = {
     "/": { bubbleLeft: "Hello", bubbleRight: "I'm Woony" },
     "/work": {
       bubbleLeft: "Here's my work",
