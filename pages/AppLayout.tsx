@@ -1,5 +1,4 @@
 import React, { ReactNode, useContext } from "react";
-import Link from "next/link";
 import { Transition, TransitionGroup } from "react-transition-group";
 import { useRouter } from "next/router";
 import Header from "../components/Header";

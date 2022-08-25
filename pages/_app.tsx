@@ -11,7 +11,6 @@ import {
 import { darkTheme, lightTheme } from "../styles/muiThemes";
 import LocalStorage from "../util/LocalStorage";
 import AppLayout from "./AppLayout";
-import Footer from "../components/Footer";
 
 interface IGlobalContext {
   selectedTheme?: PaletteMode;
