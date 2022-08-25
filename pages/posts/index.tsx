@@ -38,34 +38,12 @@ const Posts: NextPage = () => {
             />
           </Typography>
 
-          <Grid container spacing={2}>
-            {listWork.map((item) => (
-              <Grid
-                item
-                xs={6}
-                style={{
-                  display: "block",
-                  cursor: "pointer",
-                }}
-              >
-                <img
-                  src={item.img}
-                  width="100%"
-                  style={{ borderRadius: 8 }}
-                  alt="Picture of Logo"
-                />
-                <Typography variant="h6" sx={{ textAlign: "center", mt: 2 }}>
-                  {item.title}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ textAlign: "center", color: "#888888" }}
-                >
-                  {item.content}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "center", color: "#888888" }}
+          >
+            Working on it...
+          </Typography>
         </Stack>
       </Stack>
     </Stack>
