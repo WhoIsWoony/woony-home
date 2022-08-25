@@ -92,7 +92,7 @@ const AppLayout = ({ children }: Props) => {
                   },
                 }}
               >
-                {bubbleTexts[pathname]["bubbleLeft"]}
+                {bubbleTexts["/"]["bubbleLeft"]}
               </Typography>
             </Stack>
             <div
@@ -143,7 +143,7 @@ const AppLayout = ({ children }: Props) => {
                   },
                 }}
               >
-                {bubbleTexts[pathname]["bubbleRight"]}
+                {bubbleTexts["/"]["bubbleRight"]}
               </Typography>
             </Stack>
           </Stack>
