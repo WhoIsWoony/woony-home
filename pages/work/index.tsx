@@ -115,8 +115,9 @@ const Work: NextPage = () => {
           </Typography>
 
           <Grid container spacing={2}>
-            {listWork.map((item) => (
+            {listWork.map((item, index) => (
               <Grid
+                key={index}
                 item
                 xs={6}
                 style={{
@@ -159,8 +160,9 @@ const Work: NextPage = () => {
           </Typography>
 
           <Grid container spacing={2}>
-            {listOldWork.map((item) => (
+            {listOldWork.map((item, index) => (
               <Grid
+                key={index}
                 item
                 xs={12}
                 style={{
