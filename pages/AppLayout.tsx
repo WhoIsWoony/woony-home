@@ -19,12 +19,12 @@ const getTransitionStyles = {
   },
   entered: {
     transition: `opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out`,
-    transform: `translateY(2rem)`,
+    transform: `translateY(0rem)`,
     opacity: 1,
   },
   exiting: {
     transition: `opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out`,
-    transform: `translateY(-2rem)`,
+    transform: `translateY(2rem)`,
     opacity: 0,
   },
 };
